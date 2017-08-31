@@ -1,0 +1,4 @@
+<h2> <%= @email.object %></h2>
+
+<p><%= @email.body %></p> 
+<p> <%= link_to 'Destroy', email, method: :delete, data: {confirm: 'Are you sure?'}, :remote => true, :class => 'delete_email' %></p>

@@ -8,22 +8,52 @@
 <body>
   <h1 class="mb-4">My First Email Viewer that will -soon- rock</h1>
 
-  <div class="container">
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 bg-primary">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Mail box</th>
+                        <th colspan="3"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @emails.each do |email| %>
+                        <tr>
+                            <td class="">
+                                <%= link_to email.object, email, :remote => true, class:"objet" %>
+                            </td>
+                        </tr>
+                        <% end %>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-9 bg-warning email-content">
+          <div id="content"> </div>
+        </div>
+    </div>
+</div>
+
+
+  <!-- <div class="container">
     <div class="row d-flex justify-content-start">
-      <div class="col-3" id="list">
+      <div class="col-md-3" id="list">
         <ul>
           <% @emails.each do |email| %>
           <li id="email-<%=email.id%>">
-          	<span class="object"> <%=email.object%></span></li>
-          <% end %> 
+            <%= link_to email.object, :remote => true, class: "object" %>
+          </li>
+
+          <%end%> 
         </ul>
       </div>
 
-      <div class="col-9" id="content">
-        
+      <div class="col-md-9" id="email-content">
+        <div id = "content"></div>
       </div>
     </div>
-  </div>
-
+  </div> -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 </body>
 </html>

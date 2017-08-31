@@ -1,0 +1,2 @@
+$("#content").empty();
+$("<%= escape_javascript(render @email) %>").appendTo("#content");
