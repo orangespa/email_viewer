@@ -1,2 +1,29 @@
-<h1>Emails#index</h1>
-<p>Find me in app/views/emails/index.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email Viewer</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+  <h1 class="mb-4">My First Email Viewer that will -soon- rock</h1>
+
+  <div class="container">
+    <div class="row d-flex justify-content-start">
+      <div class="col-3" id="list">
+        <ul>
+          <% @emails.each do |email| %>
+          <li id="email-<%=email.id%>">
+          	<span class="object"> <%=email.object%></span></li>
+          <% end %> 
+        </ul>
+      </div>
+
+      <div class="col-9" id="content">
+        
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
